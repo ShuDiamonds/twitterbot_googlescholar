@@ -20,9 +20,9 @@ the app aim is to send the infomation which is the result of thesis title analys
 ## Setting
 ###  config
 
-1.[Twitter App](https://apps.twitter.com/)にアクセス
-2.Create New Appで新規appを作成する
-3.各種keyを手に入れる
+* 1.[Twitter App](https://apps.twitter.com/)にアクセス
+* 2.Create New Appで新規appを作成する
+* 3.各種keyを手に入れる
 
     Consumer Key(API Key)
     Consumer Secret(API Secret)
