@@ -40,6 +40,17 @@ $ pip3 install twitter
 ```bash
 $ python3 streamingTimeline.py
 ```
+### Send Message to @KanNotice 
+sending like below, 
+```bash
+@KanNotice search:keywords
+```
+we will reply: Okay, let me search it!
+search keywords from google scholar and finished it,
+send a message to u, like this
+```bash
+@yourname result:
+```
 
 
 
