@@ -1,5 +1,6 @@
 import twitter
 import json
+import random
 
 SCREEN_NAME="KanNotice"
 
@@ -28,5 +29,14 @@ if __name__ == '__main__':
 
     stream = twitter.TwitterStream(auth=auth, secure=True)
     for tweet in stream.statuses.filter(follow=friends_ids):
-        if 'user' in tweet and tweet['user']['id'] in friends['ids']:
-            print(tweet['user']['screen_name'], tweet['text'])
+        #print(tweet) # tweet data format is dictionay,
+        try: #when tweet data is about deletion, there is no keyword, user and so on.
+            if 'user' in tweet and tweet['user']['id'] in friends['ids']:
+                print(tweet['user']['screen_name'], tweet['text'])
+                
+            
+            if tweet['in_reply_to_screen_name']==SCREEN_NAME: #when reply to @KanNotice
+                tweet = "@"+tweet['user']['screen_name']+" "+"Reply Thanks you"+ " "+str(random.random())
+                twitter_api.statuses.update(status=tweet)
+        except:
+            pass
