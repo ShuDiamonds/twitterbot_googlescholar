@@ -36,7 +36,11 @@ if __name__ == '__main__':
                 
             
             if tweet['in_reply_to_screen_name']==SCREEN_NAME: #when reply to @KanNotice
-                tweet = "@"+tweet['user']['screen_name']+" "+"Reply Thanks you"+ " "+str(random.random())
-                twitter_api.statuses.update(status=tweet)
+                if "search:" in tweet['text']:
+                    tweet = "@"+tweet['user']['screen_name']+" "+"Okay, let me search it!"+ " "+str(random.random())
+                    twitter_api.statuses.update(status=tweet)
+                else:
+                    tweet = "@"+tweet['user']['screen_name']+" "+"Reply Thanks you"+ " "+str(random.random())
+                    twitter_api.statuses.update(status=tweet)
         except:
             pass
